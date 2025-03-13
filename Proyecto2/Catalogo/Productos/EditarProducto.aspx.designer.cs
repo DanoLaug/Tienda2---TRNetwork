@@ -11,7 +11,7 @@ namespace Proyecto2.Catalogo.Productos
 {
 
 
-    public partial class AltaRopa
+    public partial class EditarRopa
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace Proyecto2.Catalogo.Productos
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVNombre;
 
         /// <summary>
-        /// Control DDLDescripcion.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
         /// Control RFVDescripcion.
@@ -51,13 +51,13 @@ namespace Proyecto2.Catalogo.Productos
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDescripcion;
 
         /// <summary>
-        /// Control DDLPrecio.
+        /// Control txtPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLPrecio;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
         /// Control RFVPrecio.
@@ -69,40 +69,67 @@ namespace Proyecto2.Catalogo.Productos
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPrecio;
 
         /// <summary>
-        /// Control txtCapacidad.
+        /// Control REVPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCapacidad;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVPrecio;
 
         /// <summary>
-        /// Control RFVCapacidad.
+        /// Control txtStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCapacidad;
+        protected global::System.Web.UI.WebControls.TextBox txtStock;
 
         /// <summary>
-        /// Control txtKilometraje.
+        /// Control RFVStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKilometraje;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVStock;
 
         /// <summary>
-        /// Control RFVKilometraje.
+        /// Control REVStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVKilometraje;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVStock;
+
+        /// <summary>
+        /// Control DDLCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLCategoria;
+
+        /// <summary>
+        /// Control RFVCategoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCategoria;
+
+        /// <summary>
+        /// Control chkDisponibilidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDisponibilidad;
 
         /// <summary>
         /// Control SubeImagen.
@@ -132,13 +159,13 @@ namespace Proyecto2.Catalogo.Productos
         protected global::System.Web.UI.WebControls.Label lblFoto;
 
         /// <summary>
-        /// Control imgFotoCamion.
+        /// Control imgFotoProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgFotoCamion;
+        protected global::System.Web.UI.WebControls.Image imgFotoProducto;
 
         /// <summary>
         /// Control urlFoto.

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VO;
+using CapaDatos;
 
 namespace CapaNegocios
 {
-    class BllUsuarios
+    public class BllUsuarios
     {
             // Obtener lista de usuarios
             public static List<UsuariosVO> GetListaUsuarios()
@@ -42,7 +43,7 @@ namespace CapaNegocios
                     UsuariosVO usuario = DalUsuarios.GetUsuarioById(paramIdUsuario);
                     if (usuario != null && usuario.Id > 0)  // Verifica si existe antes de eliminar
                     {
-                        DalUsuario.EliminarUsuario(paramIdUsuario);
+                        DalUsuarios.EliminarUsuario(paramIdUsuario);
                         return "1";  // Eliminación exitosa
                     }
                     else

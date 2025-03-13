@@ -4,38 +4,41 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CapaDatos.DalCategorias;
 using VO;
 
 namespace CapaDatos
 {
-    public class DalUsuarios
+    public class DalCategorias
     {
-        public static List<UsuariosVO> GetListaUsuarios()
+        public static class CategoriasVO
         {
-            try
+            // Obtener lista de usuarios
+            public static List<CategoriasVO> GetListaCategorias()
             {
-                DataSet dsUsuarios = MetodoDatos.ExecuteDataSet("ObtenerTodosUsuarios");
-                List<UsuariosVO> listaUsuarios = new List<UsuariosVO>();
-
-                foreach (DataRow dr in dsUsuarios.Tables[0].Rows)
+                try
                 {
-                    listaUsuarios.Add(new UsuariosVO(dr));
+                    DataSet dsCategorias = MetodoDatos.ExecuteDataSet("ObtenerCategoriasPorId");
+                    List<UsuariosVO> listaCategorias = new List<CategoriasVO>();
+
+                    foreach (DataRow dr in dsUsuarios.Tables[0].Rows)
+                    {
+                        listaUsuarios.Add(new UsuariosVO(dr));
+                    }
+                    return listaUsuarios;
                 }
-                return listaUsuarios;
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-          
 
             // Insertar usuario
             public static void InsertarUsuario(string paramNombre, string paramCorreo, string paramTelefono, string paramDireccion, DateTime paramFechaNacimiento, string paramUrlFoto)
             {
                 try
                 {
-                    MetodoDatos.ExecuteNonQuery("InsertarUsuario",
+                    MetodoDatos.ExecuteNonQuery("Usuarios_Insertar",
                         "@Nombre", paramNombre,
                         "@Correo", paramCorreo,
                         "@Telefono", paramTelefono,
@@ -54,7 +57,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    MetodoDatos.ExecuteNonQuery("ActualizarUsuarios",
+                    MetodoDatos.ExecuteNonQuery("Usuarios_Actualizar",
                         "@Id", paramIdUsuario,
                         "@Nombre", paramNombre,
                         "@Correo", paramCorreo,
@@ -74,7 +77,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    MetodoDatos.ExecuteNonQuery("EliminarUsuario", "@Id", paramIdUsuario);
+                    MetodoDatos.ExecuteNonQuery("Usuarios_Eliminar", "@Id", paramIdUsuario);
                 }
                 catch (Exception ex)
                 {
@@ -87,7 +90,7 @@ namespace CapaDatos
             {
                 try
                 {
-                    DataSet dsUsuario = MetodoDatos.ExecuteDataSet("ObtenerUsuarioPorId", "@Id", paramIdUsuario);
+                    DataSet dsUsuario = MetodoDatos.ExecuteDataSet("Usuarios_GetById", "@Id", paramIdUsuario);
                     if (dsUsuario.Tables[0].Rows.Count > 0)
                     {
                         DataRow dr = dsUsuario.Tables[0].Rows[0];
@@ -104,4 +107,5 @@ namespace CapaDatos
                 }
             }
         }
+    }
 }

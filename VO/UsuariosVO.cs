@@ -29,11 +29,11 @@ namespace VO
         public UsuariosVO()
         {
             Id = 0;
-            Nombre = String.Empty;
-            Correo = String.Empty;
-            Telefono = String.Empty;
-            Direccion = String.Empty;
-            UrlFoto = String.Empty;
+            Nombre = string.Empty;
+            Correo = string.Empty;
+            Telefono = string.Empty;
+            Direccion = string.Empty;
+            UrlFoto = string.Empty;
             FechaNacimiento = DateTime.Parse("1900-01-01");
         }
 

@@ -101,9 +101,9 @@
   <ItemGroup>
     <Content Include="Catalogo\Contacto.aspx" />
     <Content Include="Catalogo\Medios.aspx" />
-    <Content Include="Catalogo\Productos\AltaRopa.aspx" />
-    <Content Include="Catalogo\Productos\EditarRopa.aspx" />
-    <Content Include="Catalogo\Productos\ListarRopa.aspx" />
+    <Content Include="Catalogo\Productos\AltaProducto.aspx" />
+    <Content Include="Catalogo\Productos\EditarProducto.aspx" />
+    <Content Include="Catalogo\Productos\ListarProductos.aspx" />
     <Content Include="Catalogo\Ubicacion.aspx" />
     <Content Include="Catalogo\Usuarios\AltaUsuarios.aspx" />
     <Content Include="Catalogo\Usuarios\EditarUsuario.aspx" />
@@ -221,26 +221,26 @@
     <Compile Include="Catalogo\Medios.aspx.designer.cs">
       <DependentUpon>Medios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Catalogo\Productos\AltaRopa.aspx.cs">
-      <DependentUpon>AltaRopa.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\AltaProducto.aspx.cs">
+      <DependentUpon>AltaProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Catalogo\Productos\AltaRopa.aspx.designer.cs">
-      <DependentUpon>AltaRopa.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\AltaProducto.aspx.designer.cs">
+      <DependentUpon>AltaProducto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Catalogo\Productos\EditarRopa.aspx.cs">
-      <DependentUpon>EditarRopa.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\EditarProducto.aspx.cs">
+      <DependentUpon>EditarProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Catalogo\Productos\EditarRopa.aspx.designer.cs">
-      <DependentUpon>EditarRopa.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\EditarProducto.aspx.designer.cs">
+      <DependentUpon>EditarProducto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Catalogo\Productos\ListarRopa.aspx.cs">
-      <DependentUpon>ListarRopa.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\ListarProductos.aspx.cs">
+      <DependentUpon>ListarProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Catalogo\Productos\ListarRopa.aspx.designer.cs">
-      <DependentUpon>ListarRopa.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\ListarProductos.aspx.designer.cs">
+      <DependentUpon>ListarProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogo\Ubicacion.aspx.cs">
       <DependentUpon>Ubicacion.aspx</DependentUpon>

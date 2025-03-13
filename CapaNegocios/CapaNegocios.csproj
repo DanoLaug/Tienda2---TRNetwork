@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClaseDatos\CapaDatos.csproj" />
+    <ProjectReference Include="..\Proyecto2\Proyecto2.csproj" />
     <ProjectReference Include="..\VO\VO.csproj" />
   </ItemGroup>
 

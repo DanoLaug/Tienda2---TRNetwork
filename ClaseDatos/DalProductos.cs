@@ -14,22 +14,19 @@ namespace CapaDatos
         public static List<ProductosVO> GetLstProductos(bool? Disponibilidad)
         {
             string Query = "Productos_Listar";
-
             DataSet dsProductos = new DataSet();
 
             try
             {
                 if (Disponibilidad == null)
                 {
-                    //Obtenemos todos los Choferes de la BD
                     dsProductos = MetodoDatos.ExecuteDataSet(Query);
                 }
                 else
                 {
-                    //Obtenemos los choferes según paramDisponibilidad
-                    dsProductos = MetodoDatos.
-                        ExecuteDataSet(Query, "@Disponibilidad", Disponibilidad);
+                    dsProductos = MetodoDatos.ExecuteDataSet(Query, "@Disponibilidad", Disponibilidad);
                 }
+
                 if (dsProductos.Tables[0].Rows.Count > 0)
                 {
                     List<ProductosVO> LstProductos = new List<ProductosVO>();
@@ -41,22 +38,18 @@ namespace CapaDatos
                     return LstProductos;
                 }
                 return null;
-
             }
             catch (Exception ex)
             {
                 throw;
             }
         }
-        public static string InsProducto(string Nombre, string Descripcion, decimal Precio, int Stock, string UrlFoto, int CategoriaId)
-        {
 
+        public static void InsProducto(string Nombre, string Descripcion, decimal Precio, int Stock, string UrlFoto, int CategoriaId)
+        {
             try
             {
-
-                int intResult;
-
-                intResult = MetodoDatos.ExecuteNonQuery("InsertarProducto",
+                MetodoDatos.ExecuteNonQuery("InsertarProductos",
                     "@Nombre", Nombre,
                     "@Descripcion", Descripcion,
                     "@Precio", Precio,
@@ -68,21 +61,15 @@ namespace CapaDatos
             {
                 throw;
             }
-            finally
-            {
-
-            }
         }
 
         public static void UpdProducto(int IdProducto, string Nombre, string Descripcion, decimal Precio, int Stock, string UrlFoto, int CategoriaId)
         {
             try
             {
-
-                int intResult;
-
-                intResult = MetodoDatos.ExecuteNonQuery("ActualizarProducto",
-                   "@Nombre", Nombre,
+                MetodoDatos.ExecuteNonQuery("Productos_Actualizar",
+                    "@Id", IdProducto,
+                    "@Nombre", Nombre,
                     "@Descripcion", Descripcion,
                     "@Precio", Precio,
                     "@Stock", Stock,
@@ -93,49 +80,39 @@ namespace CapaDatos
             {
                 throw;
             }
-            finally
-            {
-
-            }
-        }// del Update
+        }
 
         public static void DelProducto(int IdProducto)
         {
             try
             {
-
-                MetodoDatos.ExecuteNonQuery("EliminarProducto", "@Id", IdProducto);
+                MetodoDatos.ExecuteNonQuery("Productos_Eliminar", "@Id", IdProducto);
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-            }
-        }// del DelProducto
+        }
 
         public static ProductosVO GetProductoById(int IdProducto)
         {
             try
             {
-                DataSet dsProducto = MetodoDatos.ExecuteDataSet("ObtenerProductoPorId", "@id", IdProducto);
+                DataSet dsProducto = MetodoDatos.ExecuteDataSet("Productos_ObtenerPorId", "@Id", IdProducto);
                 if (dsProducto.Tables[0].Rows.Count > 0)
                 {
                     DataRow dr = dsProducto.Tables[0].Rows[0];
-                    ProductosVO Producto = new ProductosVO(dr);
-                    return Producto;
+                    return new ProductosVO(dr);
                 }
                 else
                 {
-                    ProductosVO Producto = new ProductosVO();
-                    return Producto;
+                    return new ProductosVO();
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-        } //
+        }
     }
 }

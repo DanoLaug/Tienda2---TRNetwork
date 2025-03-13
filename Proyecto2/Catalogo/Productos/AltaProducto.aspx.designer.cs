@@ -11,134 +11,116 @@ namespace Proyecto2.Catalogo.Productos
 {
 
 
-    public partial class EditarRopa
+    public partial class AltaRopa
     {
 
         /// <summary>
-        /// Control lblIdCamion.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdCamion;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control txtMatricula.
+        /// Control RFVNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMatricula;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVNombre;
 
         /// <summary>
-        /// Control RFVMarticula.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVMarticula;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
 
         /// <summary>
-        /// Control DDLTipoCamion.
+        /// Control RFVDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLTipoCamion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDescripcion;
 
         /// <summary>
-        /// Control RFVTipoCamion.
+        /// Control txtPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVTipoCamion;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
-        /// Control DDLModelo.
+        /// Control RFVPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLModelo;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVPrecio;
 
         /// <summary>
-        /// Control RFVModelo.
+        /// Control REVPrecio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVModelo;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVPrecio;
 
         /// <summary>
-        /// Control DDLMarca.
+        /// Control txtStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLMarca;
+        protected global::System.Web.UI.WebControls.TextBox txtStock;
 
         /// <summary>
-        /// Control RFVMarca.
+        /// Control RFVStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVMarca;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVStock;
 
         /// <summary>
-        /// Control txtCapacidad.
+        /// Control REVStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCapacidad;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator REVStock;
 
         /// <summary>
-        /// Control RFVCapacidad.
+        /// Control DDLCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCapacidad;
+        protected global::System.Web.UI.WebControls.DropDownList DDLCategoria;
 
         /// <summary>
-        /// Control txtKilometraje.
+        /// Control RFVCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKilometraje;
-
-        /// <summary>
-        /// Control RFVKilometraje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVKilometraje;
-
-        /// <summary>
-        /// Control chkDisponibilidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkDisponibilidad;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVCategoria;
 
         /// <summary>
         /// Control SubeImagen.
@@ -147,16 +129,7 @@ namespace Proyecto2.Catalogo.Productos
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile SubeImagen;
-
-        /// <summary>
-        /// Control btnSubeImagen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubeImagen;
+        protected global::System.Web.UI.WebControls.FileUpload SubeImagen;
 
         /// <summary>
         /// Control lblFoto.
@@ -168,13 +141,13 @@ namespace Proyecto2.Catalogo.Productos
         protected global::System.Web.UI.WebControls.Label lblFoto;
 
         /// <summary>
-        /// Control imgFotoCamion.
+        /// Control imgFotoProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgFotoCamion;
+        protected global::System.Web.UI.WebControls.Image imgFotoProducto;
 
         /// <summary>
         /// Control urlFoto.

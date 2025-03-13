@@ -12,6 +12,7 @@ namespace Proyecto2.Catalogo.Productos
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
+
 		}
 	}
 }

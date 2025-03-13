@@ -27,13 +27,7 @@
             runat="server"
             CssClass="table table-bordered table-striped table-condensed"
             AutoGenerateColumns="False"
-            DataKeyNames="Id"
-            
-            OnRowDeleting="GVUsuarios_RowDeleting"
-            OnRowCommand="GVUsuarios_RowCommand"
-            OnRowEditing="GVUsuarios_RowEditing"
-            OnRowUpdating="GVUsuarios_RowUpdating"
-            OnRowCancelingEdit="GVUsuarios_RowCancelingEdit">
+            DataKeyNames="Id">   
             
             <Columns>
                 <asp:ButtonField 

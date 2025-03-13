@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    class MetodoDatos
+    internal class MetodoDatos
     {
         //Metodo que nos regresa una tabla de información realizada con una consulta
         public static DataSet ExecuteDataSet(string sp, params object[] parametros)

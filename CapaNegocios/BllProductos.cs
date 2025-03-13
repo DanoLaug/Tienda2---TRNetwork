@@ -13,107 +13,72 @@ namespace CapaNegocios
         // Listar Productos
         public static List<ProductosVO> GetLstProductos(bool? Disponibilidad)
         {
-            List<ProductosVO> LstProductos = new List<ProductosVO>();
             try
             {
                 System.Diagnostics.Debug.WriteLine("Llamando a DalProductos.GetLstProductos");
                 return DalProductos.GetLstProductos(Disponibilidad);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return LstProductos;
+                throw new Exception("Error al obtener la lista de productos", ex);
             }
         }
 
         // Insertar Producto
         public static string InsProducto(string Nombre, string Descripcion, decimal Precio, int Stock, string UrlFoto, int CategoriaId)
         {
-            // Verificar si el nombre del producto ya existe
             try
             {
                 List<ProductosVO> LstProductos = DalProductos.GetLstProductos(null);
-
-                bool Existe = false;
-
-                foreach (ProductosVO item in LstProductos)
-                {
-                    if (item.Nombre == Nombre)
-                    {
-                        Existe = true;
-                        break;
-                    }
-                }
+                bool Existe = LstProductos.Exists(p => p.Nombre == Nombre);
 
                 if (Existe)
                 {
                     return "El nombre del producto ya existe.";
                 }
-                else
-                {
-                    DalProductos.InsProducto(Nombre, Descripcion, Precio, Stock, UrlFoto, CategoriaId);
-                    return "Producto agregado correctamente.";
-                }
+
+                DalProductos.InsProducto(Nombre, Descripcion, Precio, Stock, UrlFoto, CategoriaId);
+                return "Producto agregado correctamente.";
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return $"Error al insertar producto: {ex.Message}";
             }
         }
 
         // Actualizar Producto
-        public static string UpdProducto(int IdProducto, string Nombre, string Descripcion, decimal Precio, int Stock, bool Disponibilidad, string UrlFoto, int CategoriaId)
+        public static string UpdProducto(int IdProducto, string Nombre, string Descripcion, decimal Precio, int Stock, string UrlFoto, int CategoriaId)
         {
             try
             {
                 List<ProductosVO> LstProductos = DalProductos.GetLstProductos(null);
-                bool Existe = false;
-
-                foreach (ProductosVO item in LstProductos)
-                {
-                    if ((item.Id != IdProducto) && (item.Nombre == Nombre))
-                    {
-                        Existe = true;
-                        break;
-                    }
-                }
+                bool Existe = LstProductos.Exists(p => p.Id != IdProducto && p.Nombre == Nombre);
 
                 if (Existe)
                 {
                     return "El nombre del producto ya existe.";
                 }
-                else
-                {
-                    DalProductos.UpdProducto(IdProducto, Nombre, Descripcion, Precio, Stock, Disponibilidad, UrlFoto, CategoriaId);
-                    return "Producto actualizado correctamente.";
-                }
+
+                DalProductos.UpdProducto(IdProducto, Nombre, Descripcion, Precio, Stock, UrlFoto, CategoriaId);
+                return "Producto actualizado correctamente.";
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return $"Error al actualizar producto: {ex.Message}";
             }
         }
 
         // Eliminar Producto
         public static string DelProducto(int IdProducto)
         {
-            // Borrar solo si el producto está disponible
             try
             {
-                ProductosVO ProductoVO = DalProductos.GetProductoById(IdProducto);
-
-                if (ProductoVO.Disponibilidad)
-                {
-                    DalProductos.DelProducto(IdProducto);
-                    return "Producto eliminado correctamente.";
-                }
-                else
-                {
-                    return "El producto no está disponible y no puede ser eliminado.";
-                }
+                DalProductos.DelProducto(IdProducto);
+                return "Producto eliminado correctamente.";
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return $"Error al eliminar producto: {ex.Message}";
             }
         }
 
@@ -124,10 +89,11 @@ namespace CapaNegocios
             {
                 return DalProductos.GetProductoById(IdProducto);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new ProductosVO();
+                throw new Exception("Error al obtener el producto", ex);
             }
         }
     }
 }
+
