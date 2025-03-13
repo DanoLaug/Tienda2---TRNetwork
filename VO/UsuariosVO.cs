@@ -7,30 +7,34 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    class UsuariosVO
+    public class UsuariosVO
     {
         private int _Id;
         private string _Nombre;
         private string _Correo;
-        private string _Contraseña;
-        private string _Rol;
-        private bool _Disponibilidad;
+        private string _Telefono;
+        private string _Direccion;
+        private string _UrlFoto;
+        private DateTime _FechaNacimiento;
+        
 
         public int Id { get => _Id; set => _Id = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
         public string Correo { get => _Correo; set => _Correo = value; }
-        public string Contraseña { get => _Contraseña; set => _Contraseña = value; }
-        public string Rol { get => _Rol; set => _Rol = value; }
-        public bool Disponibilidad { get => _Disponibilidad; set => _Disponibilidad = value; }
+        public string Telefono { get => _Telefono; set => _Telefono = value; }
+        public string Direccion { get => _Direccion; set => _Direccion = value; }
+        public string UrlFoto { get => _UrlFoto; set => _UrlFoto = value; }
+        public DateTime FechaNacimiento { get => _FechaNacimiento; set => _FechaNacimiento = value; }
 
         public UsuariosVO()
         {
             Id = 0;
             Nombre = String.Empty;
             Correo = String.Empty;
-            Contraseña = String.Empty;
-            Rol = String.Empty;
-            Disponibilidad = false;
+            Telefono = String.Empty;
+            Direccion = String.Empty;
+            UrlFoto = String.Empty;
+            FechaNacimiento = DateTime.Parse("1900-01-01");
         }
 
         public UsuariosVO(DataRow dr)
@@ -38,9 +42,10 @@ namespace VO
             Id = int.Parse(dr["Id"].ToString());
             Nombre = dr["Nombre"].ToString();
             Correo = dr["Correo"].ToString();
-            Contraseña = dr["Contraseña"].ToString();
-            Rol = dr["Rol"].ToString();
-            Disponibilidad = bool.Parse(dr["Disponibilidad"].ToString());
+            Telefono = dr["Telefono"].ToString();
+            Direccion = dr["Direccion"].ToString();
+            UrlFoto = dr["UrlFoto"].ToString();
+            FechaNacimiento = DateTime.Parse(dr["FechaNacimiento"].ToString());
         }
     }
 }

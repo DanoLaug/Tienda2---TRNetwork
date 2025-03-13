@@ -46,9 +46,10 @@
                     </a>
                     <ul class="nav-links">
                         <li><a href="Inicio.aspx" class="active">Inicio</a></li>
-                        <li><a href="Catalogo/Productos.aspx">Productos</a></li>
+                        <li><a href="Catalogo/Productos/ListarRopa.aspx">Productos</a></li>
                         <li><a href="Catalogo/Medios.aspx">Medios Audiovisuales</a></li>
                         <li><a href="Contacto.aspx">Contacto</a></li>
+                        <li><a href="Catalogo/Usuarios/ListarUsuarios.aspx">Registro</a></li>
                         <li><a href="Ubicacion.aspx">Ubicación</a></li>
                     </ul>
                 </div>

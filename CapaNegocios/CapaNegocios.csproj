@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClaseDatos\CapaDatos.csproj" />
+    <ProjectReference Include="..\VO\VO.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -4,118 +4,107 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CapaDatos.DalUsuarios;
+using VO;
 
 namespace CapaDatos
 {
-    class DalUsuarios
+    public class DalUsuarios
     {
-        //Para hacer referecnia usamos ctrl + . (punto) y seleccionamos el using
-        public static List<UsuariosVO> GetLstUsuarios(bool? paramDisponibilidad)
+        public static class UsuariosVO
         {
-            try
+            // Obtener lista de usuarios
+            public static List<UsuariosVO> GetListaUsuarios()
             {
-                DataSet dsUsuarios;
-                if (paramDisponibilidad == null)
+                try
                 {
-                    dsUsuarios = MetodoDatos.ExecuteDataSet("Usuarios_Listar");
+                    DataSet dsUsuarios = MetodoDatos.ExecuteDataSet("Usuarios_Listar");
+                    List<UsuariosVO> listaUsuarios = new List<UsuariosVO>();
+
+                    foreach (DataRow dr in dsUsuarios.Tables[0].Rows)
+                    {
+                        listaUsuarios.Add(new UsuariosVO(dr));
+                    }
+                    return listaUsuarios;
                 }
-                else
+                catch (Exception ex)
                 {
-                    dsUsuarios = MetodoDatos.ExecuteDataSet("Usuarios_Listar", "@Disponibilidad", paramDisponibilidad);
-                }
-
-                List<UsuariosVO> ListaUsuarios = new List<UsuariosVO>();
-
-                foreach (DataRow dr in dsUsuarios.Tables[0].Rows)
-                {
-                    ListaUsuarios.Add(new UsuariosVO(dr));
-                }
-                return ListaUsuarios;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        //Insertar
-        public static void InsChofer(string paramLicencia, string paramTelefono, DateTime paramFechaNacimiento, string paramName, string paramApPaterno, string paramApMaterno, string paramUrlFoto)
-        {
-            try
-            {
-                int intResult;
-                intResult = MetodoDatos.ExecuteNonQuery("Choferes_Insertar",
-                    "@Licencia", paramLicencia,
-                    "@Telefono", paramTelefono,
-                    "@FechaNacimiento", paramFechaNacimiento,
-                    "@Nombre", paramName,
-                    "@ApPaterno", paramApPaterno,
-                    "@ApMaterno", paramApMaterno,
-                    "@UrlFoto", paramUrlFoto);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        //Actualizar
-        public static void UpdChofer(int paramIdChofer, string paramLicencia, string paramTelefono, DateTime? paramFechaNacimiento, string paramName, string paramApPaterno, string paramApMaterno, string paramUrlFoto, bool? paramDisponibilidad)
-        {
-            try
-            {
-                MetodoDatos.ExecuteNonQuery("Choferes_Actualizar",
-                    "@Id", paramIdChofer,
-                    "@Licencia", paramLicencia,
-                    "@Telefono", paramTelefono,
-                    "@FechaNacimiento", paramFechaNacimiento,
-                    "@Name", paramName,
-                    "@ApPaterno", paramApPaterno,
-                    "@ApMaterno", paramApMaterno,
-                    "@UrlFoto", paramUrlFoto,
-                    "@Disponibilidad", paramDisponibilidad);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        //Eliminar
-        public static void DelChofer(int paramIdChofer)
-        {
-            try
-            {
-                MetodoDatos.ExecuteNonQuery("Choferes_Eliminar", "@Id", paramIdChofer);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        //Obtener un chofer
-        public static ChoferesVO GetChoferById(int paramIdChofer)
-        {
-            try
-            {
-                DataSet dsChofer = MetodoDatos.ExecuteDataSet("Choferes_GetById", "@Id", paramIdChofer);
-                if (dsChofer.Tables[0].Rows.Count > 0)
-                {
-                    DataRow dr = dsChofer.Tables[0].Rows[0];
-                    ChoferesVO Chofer = new ChoferesVO(dr);
-                    return Chofer;
-                }
-                else
-                {
-                    ChoferesVO Chofer = new ChoferesVO();
-                    return Chofer;
+                    throw ex;
                 }
             }
 
-            catch (Exception ex)
+            // Insertar usuario
+            public static void InsertarUsuario(string paramNombre, string paramCorreo, string paramTelefono, string paramDireccion, DateTime paramFechaNacimiento, string paramUrlFoto)
             {
-                throw;
+                try
+                {
+                    MetodoDatos.ExecuteNonQuery("Usuarios_Insertar",
+                        "@Nombre", paramNombre,
+                        "@Correo", paramCorreo,
+                        "@Telefono", paramTelefono,
+                        "@Direccion", paramDireccion,
+                        "@FechaNacimiento", paramFechaNacimiento,
+                        "@UrlFoto", paramUrlFoto);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+
+            // Actualizar usuario
+            public static void ActualizarUsuario(int paramIdUsuario, string paramNombre, string paramCorreo, string paramTelefono, string paramDireccion, DateTime paramFechaNacimiento, string paramUrlFoto)
+            {
+                try
+                {
+                    MetodoDatos.ExecuteNonQuery("Usuarios_Actualizar",
+                        "@Id", paramIdUsuario,
+                        "@Nombre", paramNombre,
+                        "@Correo", paramCorreo,
+                        "@Telefono", paramTelefono,
+                        "@Direccion", paramDireccion,
+                        "@FechaNacimiento", paramFechaNacimiento,
+                        "@UrlFoto", paramUrlFoto);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+
+            // Eliminar usuario
+            public static void EliminarUsuario(int paramIdUsuario)
+            {
+                try
+                {
+                    MetodoDatos.ExecuteNonQuery("Usuarios_Eliminar", "@Id", paramIdUsuario);
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+
+            // Obtener usuario por ID
+            public static UsuariosVO GetUsuarioById(int paramIdUsuario)
+            {
+                try
+                {
+                    DataSet dsUsuario = MetodoDatos.ExecuteDataSet("Usuarios_GetById", "@Id", paramIdUsuario);
+                    if (dsUsuario.Tables[0].Rows.Count > 0)
+                    {
+                        DataRow dr = dsUsuario.Tables[0].Rows[0];
+                        return new UsuariosVO(dr);
+                    }
+                    else
+                    {
+                        return new UsuariosVO();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
             }
         }
     }

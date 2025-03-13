@@ -101,8 +101,13 @@
   <ItemGroup>
     <Content Include="Catalogo\Contacto.aspx" />
     <Content Include="Catalogo\Medios.aspx" />
-    <Content Include="Catalogo\Productos.aspx" />
+    <Content Include="Catalogo\Productos\AltaRopa.aspx" />
+    <Content Include="Catalogo\Productos\EditarRopa.aspx" />
+    <Content Include="Catalogo\Productos\ListarRopa.aspx" />
     <Content Include="Catalogo\Ubicacion.aspx" />
+    <Content Include="Catalogo\Usuarios\AltaUsuarios.aspx" />
+    <Content Include="Catalogo\Usuarios\EditarUsuario.aspx" />
+    <Content Include="Catalogo\Usuarios\ListarUsuarios.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -216,12 +221,26 @@
     <Compile Include="Catalogo\Medios.aspx.designer.cs">
       <DependentUpon>Medios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Catalogo\Productos.aspx.cs">
-      <DependentUpon>Productos.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\AltaRopa.aspx.cs">
+      <DependentUpon>AltaRopa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Catalogo\Productos.aspx.designer.cs">
-      <DependentUpon>Productos.aspx</DependentUpon>
+    <Compile Include="Catalogo\Productos\AltaRopa.aspx.designer.cs">
+      <DependentUpon>AltaRopa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\Productos\EditarRopa.aspx.cs">
+      <DependentUpon>EditarRopa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Productos\EditarRopa.aspx.designer.cs">
+      <DependentUpon>EditarRopa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\Productos\ListarRopa.aspx.cs">
+      <DependentUpon>ListarRopa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Productos\ListarRopa.aspx.designer.cs">
+      <DependentUpon>ListarRopa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogo\Ubicacion.aspx.cs">
       <DependentUpon>Ubicacion.aspx</DependentUpon>
@@ -229,6 +248,27 @@
     </Compile>
     <Compile Include="Catalogo\Ubicacion.aspx.designer.cs">
       <DependentUpon>Ubicacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\Usuarios\AltaUsuarios.aspx.cs">
+      <DependentUpon>AltaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Usuarios\AltaUsuarios.aspx.designer.cs">
+      <DependentUpon>AltaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\Usuarios\EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Usuarios\EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo\Usuarios\ListarUsuarios.aspx.cs">
+      <DependentUpon>ListarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Usuarios\ListarUsuarios.aspx.designer.cs">
+      <DependentUpon>ListarUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Proyecto2.Catalogo
+namespace Proyecto2.Catalogo.Usuarios
 {
-	public partial class Productos : System.Web.UI.Page
+	public partial class ListarUsuarios : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{

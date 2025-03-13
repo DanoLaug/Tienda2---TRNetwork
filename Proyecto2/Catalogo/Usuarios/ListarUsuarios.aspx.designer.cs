@@ -7,11 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proyecto2.Catalogo
+namespace Proyecto2.Catalogo.Usuarios
 {
 
 
-    public partial class Productos
+    public partial class ListarUsuarios
     {
+
+        /// <summary>
+        /// Control GVUsuarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVUsuarios;
     }
 }
